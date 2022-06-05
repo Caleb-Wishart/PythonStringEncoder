@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# DEPRECIATED
 
 from sys 		import argv 	 	as argv
 from string 	import digits	 	as digits
@@ -11,14 +12,14 @@ from pyperclip  import copy 	 	as copy
 
 # Ensure all arguments given
 try:
-	x = argv[2]	
+	x = argv[2]
 except:
 	print 'Usage: [call script] [transformation] [input text] \nFor options give \'help help\' as input'
 	quit()
 
-# Get input & sanitise	
+# Get input & sanitise
 encode_type = argv[1]
-inp = argv[2] 
+inp = argv[2]
 inp = inp.upper().replace(' ','')
 
 ### Functions ###
@@ -89,11 +90,11 @@ def vigenere(plaintext, key):
 			resPart.append(alphabet[ ( alphabet.index(plaintext[char]) + alphabet.index( key[ ( (char - count) % len(key)) ])) % 26])
 			# append the corresponding alphabet character after being shifted the by the amount of the current key letter
 			# var count allows for non A-Z characters to pass through without causing disruption to the current key letter
-			
+
 		else:
 			resPart.append(plaintext[char])
 			count += 1
-	res = ' '.join(resPart)		
+	res = ' '.join(resPart)
 
 	return res
 
